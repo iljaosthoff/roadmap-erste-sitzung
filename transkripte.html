@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transkripte — Meine erste Hypnosesitzung · Ilja Osthoff</title>
+  <meta name="description" content="Vollständige Transkripte aller 8 Module des Kurses Meine erste Hypnosesitzung von Ilja Osthoff.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-deep:  #0d0d1a;
+      --bg-main:  #1a1a2e;
+      --bg-card:  #16213e;
+      --pink:     #e040fb;
+      --cyan:     #00b4ff;
+      --white:    #ffffff;
+      --text:     #f0f0ff;
+      --muted:    #a0a0cc;
+      --dim:      #606080;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-deep);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 20% 20%, #e040fb0d, transparent),
+        radial-gradient(ellipse 50% 50% at 80% 80%, #00b4ff0a, transparent);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .skyline-bg {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 200px;
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .brand-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      border: 1px solid #00b4ff33;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .main-title {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: clamp(32px, 7vw, 58px);
+      letter-spacing: 0.06em;
+      background: linear-gradient(135deg, #e040fb, #00b4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .header-sub {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    /* Nav */
+    .nav-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 40px;
+      padding: 16px;
+      background: #16213e;
+      border-radius: 12px;
+      border: 1px solid #e040fb22;
+    }
+
+    .nav-pill {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .nav-pill:hover { background: #ffffff12; transform: translateY(-1px); }
+    .nav-pill.active { background: #ffffff18; }
+
+    /* Sections */
+    .transcript-section {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .transcript-section.visible { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-header {
+      margin-bottom: 28px;
+    }
+
+    .section-meta { margin-bottom: 8px; }
+
+    .section-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px solid;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: clamp(28px, 5vw, 42px);
+      letter-spacing: 0.06em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .section-divider {
+      height: 1px;
+      width: 100%;
+      border-radius: 1px;
+    }
+
+    .section-body p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #d0d0ee;
+      margin-bottom: 18px;
+    }
+
+    .section-body p:last-child { margin-bottom: 0; }
+
+    /* Navigation buttons */
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      gap: 12px;
+    }
+
+    .nav-btn {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid #e040fb44;
+      background: transparent;
+      color: var(--pink);
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .nav-btn:hover { background: #e040fb18; transform: translateY(-1px); }
+    .nav-btn:disabled { opacity: 0.3; cursor: default; transform: none; }
+
+    /* Download block */
+    .download-block {
+      margin-top: 48px;
+      padding: 28px 28px 24px;
+      background: #16213e;
+      border: 1px solid #e040fb22;
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .download-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+
+    .download-title {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: 22px;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .download-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto 20px;
+    }
+
+    .download-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .dl-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .dl-btn-primary {
+      background: linear-gradient(135deg, #e040fb, #7c3aed);
+      color: #fff;
+      box-shadow: 0 0 18px #e040fb33;
+    }
+
+    .dl-btn-secondary {
+      background: transparent;
+      color: var(--cyan);
+      border: 1px solid #00b4ff44;
+    }
+
+    .dl-btn-secondary:hover { background: #00b4ff11; }
+
+    /* Footer */
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--dim);
+      padding-top: 20px;
+      border-top: 1px solid #e040fb22;
+    }
+
+    .footer a { color: var(--muted); text-decoration: none; }
+    .footer a:hover { color: var(--cyan); }
+
+    @media (max-width: 480px) {
+      .page { padding: 32px 16px 60px; }
+      .section-body p { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<svg class="skyline-bg" viewBox="0 0 1440 200" preserveAspectRatio="xMidYMax meet" fill="#4fc3f7" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="100" width="30" height="100"/><rect x="20" y="70" width="20" height="130"/>
+  <rect x="50" y="80" width="40" height="120"/><rect x="60" y="50" width="12" height="150"/>
+  <rect x="100" y="90" width="35" height="110"/><rect x="110" y="60" width="10" height="140"/>
+  <rect x="200" y="85" width="30" height="115"/><rect x="240" y="65" width="50" height="135"/>
+  <rect x="300" y="95" width="35" height="105"/><rect x="345" y="70" width="45" height="130"/>
+  <rect x="400" y="80" width="40" height="120"/><rect x="490" y="60" width="55" height="140"/>
+  <rect x="555" y="80" width="35" height="120"/><rect x="600" y="70" width="50" height="130"/>
+  <rect x="660" y="85" width="40" height="115"/><rect x="710" y="75" width="45" height="125"/>
+  <rect x="800" y="65" width="55" height="135"/><rect x="865" y="80" width="40" height="120"/>
+  <rect x="910" y="70" width="45" height="130"/><rect x="1010" y="60" width="50" height="140"/>
+  <rect x="1075" y="75" width="40" height="125"/><rect x="1120" y="80" width="35" height="120"/>
+  <rect x="1165" y="65" width="50" height="135"/><rect x="1230" y="85" width="40" height="115"/>
+  <rect x="1280" y="70" width="45" height="130"/><rect x="1380" y="60" width="60" height="140"/>
+</svg>
+
+<div class="page">
+
+  <header class="header">
+    <div class="brand-tag">Die Hypnose Enthusiasten · Ilja Osthoff</div>
+    <h1 class="main-title">Meine erste Hypnosesitzung</h1>
+    <p class="header-sub">Vollständige Transkripte · 8 Module + Einführung & Abschluss</p>
+    <p class="header-sub" style="color:var(--dim)">Ilja Osthoff — Anästhesist & Hypnosetherapeut</p>
+  </header>
+
+  <nav class="nav-bar" role="navigation">
+    <button class="nav-pill" data-target="willkommen" style="border-color:#e040fb44; color:#e040fb" onclick="showSection('willkommen')">Willkommen</button>
+<button class="nav-pill" data-target="modul1" style="border-color:#e040fb44; color:#e040fb" onclick="showSection('modul1')">Modul 1</button>
+<button class="nav-pill" data-target="modul2" style="border-color:#cc40fb44; color:#cc40fb" onclick="showSection('modul2')">Modul 2</button>
+<button class="nav-pill" data-target="modul3" style="border-color:#9950ff44; color:#9950ff" onclick="showSection('modul3')">Modul 3</button>
+<button class="nav-pill" data-target="modul4" style="border-color:#6a60ff44; color:#6a60ff" onclick="showSection('modul4')">Modul 4</button>
+<button class="nav-pill" data-target="modul5" style="border-color:#3a80ff44; color:#3a80ff" onclick="showSection('modul5')">Modul 5</button>
+<button class="nav-pill" data-target="modul6" style="border-color:#00a4ff44; color:#00a4ff" onclick="showSection('modul6')">Modul 6</button>
+<button class="nav-pill" data-target="modul7" style="border-color:#00b4ff44; color:#00b4ff" onclick="showSection('modul7')">Modul 7</button>
+<button class="nav-pill" data-target="modul8" style="border-color:#4fc3f744; color:#4fc3f7" onclick="showSection('modul8')">Modul 8</button>
+<button class="nav-pill" data-target="ende" style="border-color:#4fc3f744; color:#4fc3f7" onclick="showSection('ende')">Abschluss</button>
+
+  </nav>
+
+  <main>
+    
+<section class="transcript-section" id="section-willkommen">
+  <div class="section-header">
+    <div class="section-meta">
+      <span class="section-badge" style="color:#e040fb; border-color:#e040fb55; background:#e040fb11">Intro</span>
+    </div>
+    <h2 class="section-title" style="color:#e040fb">Willkommen</h2>
+    <p class="section-subtitle">Einführung in den Kurs</p>
+    <div class="section-divider" style="background:#e040fb44"></div>
+  </div>
+  <div class="section-body">
+    <p>Hallo und herzlich willkommen zu diesem Kurs — Meine erste Hypnosesitzung.</p>
+<p>Ich bin Ilja, Anästhesist, Intensivmediziner und Hypnosetherapeut, und ich freue mich riesig, dass du dabei bist.</p>
+<p>Warum habe ich diesen Kurs gemacht? Die erste Sitzung mit einem echten Klienten — das ist der Moment, wo viele Therapeuten und angehende Therapeuten total unsicher sind. Mir ging es genauso, als ich vor über zehn Jahren mit der Hypnose angefangen habe. Ich kannte die tollen Techniken. Aber ich hatte keine Ahnung, wie ich Struktur in eine Hypnosesitzung bringen soll. Wo anfangen? Wo aufhören? Die Bücher haben mir wahnsinnig viel Theorie gegeben. Die Kurse haben mir Praxis gegeben — wie wende ich eine Technik an, wie mache ich eine Regression, welche Induktionen gibt es. Das ist alles super. Aber mir hat es nicht geholfen, die erste Sitzung logisch zu konstruieren.</p>
+<p>Ich habe dann andere Hypnotiseure gefragt, mir selber Gedanken gemacht und irgendwas zusammengebastelt. Irgendwie ist es dann gegangen — mehr schlecht als recht. Der Klient war total zufrieden. Ich habe mich während dieser Sitzung total unwohl gefühlt. Genau deswegen habe ich diesen Kurs aufgenommen.</p>
+<p>Dieser Kurs gibt dir einen Ablauf für eine Sitzung, den du direkt anwenden kannst, wenn du fertig geguckt hast. Es ist ein Ablaufplan. Du kannst ihm Schritt für Schritt folgen und machst damit eine gute Hypnosesitzung. Selbstverständlich musst du das nicht genau so machen — du wirst deinen eigenen Stil entwickeln. Aber als Anfänger gibt dir das Halt und Struktur, mit der du sofort starten kannst.</p>
+<p>Was gibt es alles? Wir haben acht Module.</p>
+<p>Modul 1: Begrüßung und Beziehungsaufbau. Ganz wichtig — die Hypnose fängt nicht mit der Induktion an.
+Modul 2: Anamnese und Zielformulierung. Was will der Klient eigentlich?
+Modul 3: Erwartungsklärung und Arbeitsauftrag. Was erwartet der Klient, wenn er zu dir kommt?
+Modul 4: Die Hypnoseerklärung. Wie funktioniert Hypnose? Modul 3 und 4 hängen in der Praxis zusammen — ich habe sie getrennt, damit du eine Struktur hast.
+Modul 5: Induktionen. Ich werde dir nicht einzelne Induktionen erklären — die kennst du aus deinem Kurs. Ich rede über die Metaebene: Woran merke ich, dass eine Induktion funktioniert? Was gibt es für Typen? Was sollte man eher lassen?
+Modul 6: Die hypnotische Intervention. Auch hier geht es um die Dinge, die wirklich wichtig sind — egal welche Intervention du am Ende wählst.
+Modul 7: Die Exduktion. Wie führe ich meinen Klienten sauber aus der Hypnose heraus?
+Modul 8: Nachgespräch und Integration. Wie gebe ich dem Klienten das mit, damit die Veränderung weitergeht?</p>
+<p>Wie arbeitest du am besten mit diesem Kurs? Schau dir ein Modul an, schreib dir mit der Hand raus, was für dich wichtig ist. Du hast auch PDFs, die du in die Sitzung mitnehmen kannst — aber nicht zum Auswendiglernen. Deine Sprache ist nicht meine Sprache. Passe es für dich an.</p>
+<p>Und dann: Wende die Struktur sofort in deiner nächsten Sitzung an.</p>
+<p>Ich habe diesen Kurs aufgenommen, weil ich genau das vor zehn Jahren gerne gehabt hätte. Ich freue mich über Nachrichten — schreib mir, was fehlt, was unklar ist, was man besser machen könnte. Ich freue mich auf dich im ersten Modul.</p>
+
+  </div>
+</section>
+
+<section class="transcript-section" id="section-modul1">
+  <div class="section-header">
+    <div class="section-meta">
+      <span class="section-badge" style="color:#e040fb; border-color:#e040fb55; background:#e040fb11">Rapport</span>
+    </div>
+    <h2 class="section-title" style="color:#e040fb">Modul 1</h2>
+    <p class="section-subtitle">Begrüßung & Beziehungsaufbau</p>
+    <div class="section-divider" style="background:#e040fb44"></div>
+  </div>
+  <div class="section-body">
+    <p>Herzlich willkommen in Modul 1 — Begrüßung und Beziehungsaufbau.</p>
+<p>Das ist, glaube ich, das wichtigste Modul in diesem Kurs. Deswegen wird es auch ein bisschen länger. Wenn der Beziehungsaufbau zwischen dir und dem Klienten nicht stimmt, kannst du alle anderen Module in die Tonne kloppen. Es funktioniert einfach nicht.</p>
+<p>Als ich anfing, habe ich wie so viele andere Therapeuten diese Phase völlig unterschätzt. Man lernt: aufmerksam sein, zuhören, den Klienten nett begrüßen. Das ist alles richtig. Aber das ist kein Rapport.</p>
+<p>Rapport bedeutet, auf der gleichen Wellenlänge zu sein. Ich sage gerne: Ich würde mit jedem meiner Klienten abends ein Bier trinken gehen. Nicht, dass ich das tue — aber nach ein paar Minuten findet man sich einfach. Mal dauert es drei Minuten, mal zehn. Das ist das Wichtigste an der ganzen Sitzung.</p>
+<p>Die Hypnose fängt nicht an bei "Mach mal die Augen zu." Die Hypnose fängt an der Tür deiner Praxis an. Sobald der Klient reinkommt, beginnt die Hypnose. Die ersten Minuten sind die entscheidendsten der ganzen Sitzung.</p>
+<p>Wie baut man Rapport auf? Ihr habt Pacing und Leading aus dem NLP gelernt. Pacing bedeutet, das Gegenüber zu spiegeln. Wenn der Klient nach vorne geht, gehst du kurz danach auch. Der Klient setzt sich zurück — du auch. Er schlägt die Beine übereinander, du nach einer Weile auch. Das klingt zunächst künstlich. Ich dachte am Anfang auch: Was soll das? Aber wenn du das wirklich verinnerlicht hast, läuft es völlig automatisch. Du passt Stimme, Sprechtempo und Körperhaltung an — ohne darüber nachzudenken.</p>
+<p>Wenn du üben willst: Setz dich an eine Bushaltestelle. Da drüben sitzt jemand. Wenn der die Beine übereinanderschlägt, mach das auch mal. Wenn der seine Haltung ändert, machst du das auch. Dann probier mal, deine Haltung zu ändern, ohne dass er es gemacht hat — und schau, ob er folgt. Das funktioniert über 20 Meter. Total lustig.</p>
+<p>Begrüße deinen Klienten, gib ihm die Hand, nenn seinen Namen: "Super schön, dass Sie da sind. Kommen Sie bitte rein." Wichtig: kein Tisch dazwischen, keine Schreibtischschranke. Ich stelle die Stühle gerne im 90-Grad-Winkel zueinander — räumlich nah, offen.</p>
+<p>Und noch eine kleine Geste mit großer Wirkung: Nenn den Namen des Klienten. Das klingt banal, hat aber eine enorme Wirkung. Das Liebste, was ein Mensch hören kann, ist sein eigener Name. Nutze ihn oft — aber nicht so oft, dass es seltsam wirkt.</p>
+<p>Es gibt einen Unterschied zwischen nett sein und echtem Rapport. Klienten brauchen keinen netten Therapeuten — sie brauchen jemanden, der wirklich mit Herz und Seele bei der Sache ist. Echten Rapport.</p>
+<p>Das Geheimnis des schnellsten Rapportaufbaus der Welt: Stell dir vor, dass dein Gegenüber die interessanteste und wichtigste Person ist, die es auf dieser Welt gibt. Stell dir das wirklich vor. Und dann hör auf, es dir vorzustellen.</p>
+<p>Wenn du diese Offenheit hast und dich wirklich auf den Klienten einlässt, funktioniert der Rapportaufbau superschnell. Und nach drei Minuten denkst du ohnehin nicht mehr dran — es läuft von selbst.</p>
+<p>Take-away: Rapport ist keine Phase, die du abhakst. Er zieht sich durch die ganze Sitzung und ist die Basis für alles, was danach kommt.</p>
+
+  </div>
+</section>
+
+<section class="transcript-section" id="section-modul2">
+  <div class="section-header">
+    <div class="section-meta">
+      <span class="section-badge" style="color:#cc40fb; border-color:#cc40fb55; background:#cc40fb11">Kontrakt</span>
+    </div>
+    <h2 class="section-title" style="color:#cc40fb">Modul 2</h2>
+    <p class="section-subtitle">Anamnese & Zielformulierung</p>
+    <div class="section-divider" style="background:#cc40fb44"></div>
+  </div>
+  <div class="section-body">
+    <p>Herzlich willkommen in Modul 2 — Anamnese und Zielformulierung.</p>
+<p>Klienten kommen oft mit Thema A und am Ende kommt Thema C, D oder Y heraus. Bei meiner allerersten bezahlten Hypnosesitzung kam eine Dame wegen Kaufsucht. Ich hatte mir dafür etwas zusammengebastelt. Nach drei, vier Minuten Gespräch kam heraus: Die Kaufsucht war nebensächlich. Sie stand kurz vor einem Burnout, wurde von Kollegen gemobbt und wollte eigentlich kündigen. Ich stand mit meinem Kaufsucht-Skript da. Das passiert sehr oft. Gehe niemals mit einem festen Plan in die Sitzung — es ist eh immer anders.</p>
+<p>Gute Fragen sind wichtiger als gute Techniken. Ihr müsst fragen und zuhören können. Als Arzt und Intensivmediziner bin ich darauf getrimmt, schnell zu entscheiden: Wo tut's weh? Wann? Was dagegen gemacht? Das ist das Gegenteil vom therapeutischen Gespräch. Im therapeutischen Kontext brauchen wir Pausen. Wir müssen einfach mal zuhören.</p>
+<p>Wenn der Klient kommt und sagt, er möchte nachts durchschlafen, ist eure Aufgabe herauszufinden: Was ist das eigentliche Veränderungsziel dahinter? Die Technik der fünf Warum-Fragen hilft dabei: Warum willst du das geändert haben? Warum das? Und warum das? So kommt man zum eigentlichen Thema.</p>
+<p>Die Frage, die alles verändert: "Woran würdest du merken, dass die Hypnose erfolgreich war?" Ich sage gerne: "Wenn ich jetzt einen Zauberstab hätte — wie würde dein Leben dann aussehen?" Die Leute lachen meistens und kommen auf das, was sie wirklich wollen.</p>
+<p>Wichtig: Ziele positiv formulieren — hin zu etwas, nicht weg von etwas. Das Ziel soll konkret sein. "Weltfrieden" ist kein brauchbares Ziel. "Ich möchte mit meinem Nachbarn besser auskommen" schon.</p>
+<p>Die SUDs — Subjective Units of Distress: Ich frage diese immer ab. Ich bitte den Klienten, die Augen zu schließen, an sein Thema zu denken, und sage: "Wie schlimm ist das gerade, auf einer Skala von 0 bis 10?" Manchmal sagen sie 11. Diese Zahl notiere ich. Sie ist mein Ausgangspunkt und mein Messinstrument. Wir brauchen sie nach der Sitzung wieder.</p>
+<p>Schreib mit. Ich notiere mir handschriftlich die Worte, die der Klient benutzt — nicht alles, aber die Schlüsselworte. Wenn er sagt, es ist wie ein Amboss auf der Brust, schreibe ich "Amboss, Brust". Wenn er sagt, wie ein Schraubstock der sich zudreht, schreibe ich "Schraubstock, zudrehen". Diese Worte kommen in der Intervention wieder vor. Das Unbewusste erkennt sich selbst. Eigene Sprache landet tiefer als jede Therapeutenformulierung.</p>
+<p>Red Flags: Es gibt Menschen, mit denen der Rapport einfach nicht funktioniert — das ist normal. Es gibt auch Situationen, wo Hypnose das falsche Mittel ist oder medizinische Aspekte im Spiel sind, die außerhalb deiner Kompetenz liegen. Sprich das offen an. Es ist Selbstschutz und Respekt gegenüber dem Klienten zugleich. In meinen AGBs steht, dass ich mir das Recht nehme, eine Behandlung ohne Angabe von Gründen abzulehnen.</p>
+<p>Take-away: Ein sauber formuliertes Ziel macht alles danach einfacher — die Induktion, die Intervention und den Abschluss.</p>
+
+  </div>
+</section>
+
+<section class="transcript-section" id="section-modul3">
+  <div class="section-header">
+    <div class="section-meta">
+      <span class="section-badge" style="color:#9950ff; border-color:#9950ff55; background:#9950ff11">Vorbereitung</span>
+    </div>
+    <h2 class="section-title" style="color:#9950ff">Modul 3</h2>
+    <p class="section-subtitle">Arbeitsauftrag & Erwartungsklärung</p>
+    <div class="section-divider" style="background:#9950ff44"></div>
+  </div>
+  <div class="section-body">
+    <p>Herzlich willkommen in Modul 3 — Erwartungsklärung und Arbeitsauftrag.</p>
+<p>Ich habe kürzlich einen Hypnosekurs als Teilnehmer besucht. Dabei entstand ein großes Getuschel, weil eine Technik vorgestellt wurde, bei der der Klient in Hypnose antworten sollte. Viele Teilnehmer sagten: "In Hypnose kann man nicht reden." Ich war erstaunt — meine Klienten können alle in Hypnose reden. Es stellte sich heraus, dass es den Teilnehmern in ihren Kursen nicht explizit beigebracht worden war. Sie hatten ihre Klienten nicht darauf vorbereitet — und deshalb konnten die Klienten auch nicht reden. Die Erwartung hatte die Wirklichkeit erschaffen.</p>
+<p>Wenn der Klient Unsicherheit spürt, erzeugt das Widerstand. Er weiß nicht, was er tun soll — und dann funktioniert das Ganze nicht.</p>
+<p>In dieser Phase geht es darum, dem Klienten Orientierung zu geben. Erkläre deine Rolle und die Rolle des Klienten.</p>
+<p>Ich mache das gern mit einer Metapher: "Ich bin wie ein Bergführer. Ich zeige dir den Weg und gehe mit dir — aber hochtragen werde ich dich nicht. Den Berg gehst du selbst. Weil ich heute keine Arbeit mache. Du machst die Arbeit." Die Klienten grinsen meistens — und die Rolle ist geklärt.</p>
+<p>Ich erkläre dem Klienten auch, was in der Hypnose alles passieren kann und darf: Man kann reden. Man kann sich auf dem Stuhl bewegen. Man kann sich die Nase putzen. Ich hatte eine Klientin mit Schnupfen — die hat sich alle zehn Minuten die Nase geputzt, und die Hypnose hat trotzdem funktioniert. Wenn der Klient das weiß, fällt das Zögern weg.</p>
+<p>Ich erkläre auch ideomotorische Signale: unwillkürliche Fingerbewegungen oder andere kleine Reaktionen, mit denen das Unbewusste kommuniziert. Ich bereite den Klienten darauf vor, dass so etwas passieren kann — und mache damit gleichzeitig einen "Yeset": ich hole Einverständnis ein, ohne dass es bürokratisch wirkt.</p>
+<p>Ganz wichtig: Viele Klienten fragen "Was muss ich jetzt machen?" Meine Antwort: "Du musst gar nichts machen. Du darfst alles machen. Es gibt nichts Falsches." Damit ist die Unsicherheit weg — und der Klient kann loslassen.</p>
+<p>Wenn der Klient so vorbereitet ist, kann er sich fallen lassen. Genau das brauchst du, damit die Intervention später wirklich ein Erfolg wird.</p>
+<p>Take-away: Wenn der Klient weiß, was kommt, kann er loslassen. Und genau das brauchst du.</p>
+
+  </div>
+</section>
+
+<section class="transcript-section" id="section-modul4">
+  <div class="section-header">
+    <div class="section-meta">
+      <span class="section-badge" style="color:#6a60ff; border-color:#6a60ff55; background:#6a60ff11">Psychoedukation</span>
+    </div>
+    <h2 class="section-title" style="color:#6a60ff">Modul 4</h2>
+    <p class="section-subtitle">Hypnoseerklärung</p>
+    <div class="section-divider" style="background:#6a60ff44"></div>
+  </div>
+  <div class="section-body">
+    <p>Herzlich willkommen in Modul 4 — die Hypnoseerklärung.</p>
+<p>Jeder Klient kommt mit Bildern im Kopf zu dir — aus dem Fernsehen, von YouTube oder vom Hörensagen. Pendel. Schlaf. Kontrollverlust. Wenn du diese Bilder nicht aktiv entkräftest, arbeiten sie gegen dich.</p>
+<p>Die drei größten Mythen, die ich in meiner Praxis erlebe:</p>
+<p>Erstens: "Bin ich überhaupt hypnotisierbar?" Zweitens: "Schlafe ich dabei, kriege ich nichts mit?" Drittens: "Verliere ich die Kontrolle und mache Dinge gegen meinen Willen?"</p>
+<p>Diese drei Mythen spreche ich aktiv an — nicht erst, wenn der Klient fragt, sondern von sich aus. Wenn sie nicht aus dem Weg geräumt sind, hemmen sie den Klienten die ganze Zeit.</p>
+<p>Das stärkste Alltagsbeispiel für Trance: das Autofahren. Du warst bei der Arbeit, hast dich über einen Kollegen geärgert, bist nach Hause gefahren, hast die ganze Heimfahrt grübelt — und plötzlich bist du zu Hause und weißt gar nicht genau, wie du dorthin gekommen bist. Das ist Trance. Dein Körper hat alles richtig gemacht, dein Geist war woanders. Das kennt jeder.</p>
+<p>Beim Autobeispiel füge ich immer hinzu: "Falls jemand vor dein Auto springen sollte — du wärst sofort da, würdest bremsen und ausweichen." Damit habe ich gleichzeitig erklärt: Der Klient behält die Kontrolle.</p>
+<p>Ein weiteres Beispiel: Netflix. Du sagst, du schaust nur kurz rein. Drei Stunden später ist der Film zu Ende, es ist elf Uhr abends — du hast dich völlig vergessen. Das ist auch ein natürlicher Trancezustand.</p>
+<p>Trance ist kein Ausnahmezustand. Ein amerikanischer Psychologe hat ausgerechnet, dass wir täglich 50 bis 60 mal in Trance sind. In der Hypnosesitzung nutzen wir die Trance einfach gezielt.</p>
+<p>Wie du Bewusstsein, Unterbewusstsein und kritischen Faktor erklärst — das kannst du dir selbst aussuchen. Eisbergmodell, Elefant mit dem kleinen Reiter oben drauf — macht, was zu euch passt.</p>
+<p>Wichtig: Macht keine Vorlesung. Die wichtigsten Mythen ansprechen, entkräften, und dann fragen: "Hast du noch Fragen, oder ist alles klar?" Ich mache erst weiter, wenn der Klient sagt, dass alles klar ist.</p>
+<p>Und noch etwas: Modul 3 und Modul 4 sind in der Praxis ineinander verwoben. Die Reihenfolge habe ich getrennt, damit du eine Struktur hast — aber im Alltag läuft beides zusammen.</p>
+<p>Take-away: Eine gute Hypnoseerklärung ist selbst schon der Beginn der Trance — weil der Klient anfängt, sich vorzustellen, wie es sich anfühlen wird.</p>
+
+  </div>
+</section>
+
+<section class="transcript-section" id="section-modul5">
+  <div class="section-header">
+    <div class="section-meta">
+      <span class="section-badge" style="color:#3a80ff; border-color:#3a80ff55; background:#3a80ff11">Tranceinduktion</span>
+    </div>
+    <h2 class="section-title" style="color:#3a80ff">Modul 5</h2>
+    <p class="section-subtitle">Induktion</p>
+    <div class="section-divider" style="background:#3a80ff44"></div>
+  </div>
+  <div class="section-body">
+    <p>Jetzt sind wir bei Modul 5 — die Induktion.</p>
+<p>Ich hoffe, ich habe klargemacht, dass die Hypnose nicht in diesem Modul anfängt. Die Hypnose fängt schon vor Modul 1 an — sobald der Klient die Tür deiner Praxis aufmacht.</p>
+<p>Induktionen gibt es wie Sand am Meer. Ich habe in meinen Kursen viele gelernt: magnetische Hände, die Dave-Elman-Induktion, Blitzinduktionen. Die Dave Elman war lange meine Lieblingsinduktion — bis ich festgestellt habe, dass sie einfach nicht bei jedem funktioniert.</p>
+<p>Hier ist meine Empfehlung: Such dir zwei bis vier Induktionen aus, die ein bisschen unterschiedlich sind. Nicht vier Varianten der Dave Elman, sondern wirklich unterschiedliche. Und beherrsche die wirklich — nicht indem du das Skript auswendig lernst, sondern indem du die Induktion verstehst: Aus was für Teilen besteht sie? Warum ist sie so aufgebaut? Was ist das Prinzip dahinter? Dann weißt du, welche Induktion zu welchem Klienten passt.</p>
+<p>Woran erkenne ich, dass eine Induktion funktioniert hat? Dave Elman hat in seinem Buch "Hypnotherapy" — das ich sehr empfehle — klassische Trancezeichen beschrieben, die bis heute Standard sind:</p>
+<p>Augenlidflattern. Verlangsamte, vertiefte Atmung. Vermehrter Speichelfluss. Manchmal beginnt der Magen zu grummeln — das ist der Parasympathikus, der Nerv der Entspannung. Tonusverlust im Gesicht: Der Kiefer entspannt sich leicht, die Unterlippe wirkt etwas voller. Veränderung der Hautdurchblutung — manchmal sieht man rote Flecken am Hals oder der Haut.</p>
+<p>Was tun, wenn wenig passiert? Verlangsamen. Stimme absenken. Mehr Raum lassen. Oder in eine andere Induktion schwenken. Ihr habt viele Werkzeuge — benutzt sie.</p>
+<p>Wichtig: In meiner Welt gibt es keine Trancetiefen. Du kannst hypnotisch arbeiten, während du mit jemandem redest. Du brauchst keine bestimmte Tiefe für eine bestimmte Technik. Mach eine saubere Induktion, vertiefe sie ordentlich — und dann geht's los.</p>
+<p>Eine Geschichte zum Schluss: Ich hatte eine Klientin, die begeisterte Taucherin war. Nach der Induktion versuchte ich einen Vertiefer mit dem Bild, tiefer zu tauchen. Mitten darin dachte ich: Ein Flaschentaucher kann nicht unbegrenzt nach unten. Das ist vielleicht keine gute Metapher. Ich wurde ein bisschen nervös und sagte: "Und du gehst so tief, wie es heute für dich angenehm ist, in diesem wunderschönen schwebenden Zustand, den du vom Tauchen kennst." Schwein gehabt. Bleibt flexibel.</p>
+<p>Take-away: Trance ist kein Zustand, den du erzeugst. Es ist ein Zustand, den dein Klient sich erlaubt.</p>
+
+  </div>
+</section>
+
+<section class="transcript-section" id="section-modul6">
+  <div class="section-header">
+    <div class="section-meta">
+      <span class="section-badge" style="color:#00a4ff; border-color:#00a4ff55; background:#00a4ff11">Kernarbeit</span>
+    </div>
+    <h2 class="section-title" style="color:#00a4ff">Modul 6</h2>
+    <p class="section-subtitle">Intervention</p>
+    <div class="section-divider" style="background:#00a4ff44"></div>
+  </div>
+  <div class="section-body">
+    <p>Herzlich willkommen in der Welt der hypnotischen Intervention — Modul 6.</p>
+<p>In der Intervention passiert die eigentliche Veränderungsarbeit. Alles vorher war Vorbereitung — wobei das Vorgespräch wahrscheinlich auch schon einiges verändert hat.</p>
+<p>Es gibt eine häufige Frage in Hypnoseforen: "Ich habe morgen einen Klienten mit Tinnitus — hat jemand ein Skript?" Ich kann eure Reaktion verstehen, wenn ich das so sage. Sucht euch drei bis fünf Interventionen aus, die ihr wirklich versteht und wirklich anwenden könnt — und wendet die auf das Problem des Klienten an.</p>
+<p>Bei mir sind das meistens: Teilearbeit (Part Therapy), Timeline-Arbeit, das Kinomodell bei Ängsten, und die EMDR-ähnliche Arbeit von Freddy Jacquin bei Schmerzen und emotionalem Schmerz. Dazu manchmal innere Kindarbeit oder Stuhlarbeit nach Fritz Perls. Das ist eigentlich alles. Dafür verstehe ich diese Techniken und kann sie auf das jeweilige Problem anpassen.</p>
+<p>Direkte Suggestion in Hypnose: Vergesst das nicht. Das ist ein wunderbares Werkzeug. "Ab heute rauchst du nicht mehr." Sag dem Klienten einfach, was er tun soll. Das klingt simpel — und ist manchmal genau das Richtige.</p>
+<p>Jetzt kommt der Punkt, den ich schon in Modul 2 angesprochen habe: Benutze die Worte des Klienten. Wenn er gesagt hat "ich möchte mich wieder leicht fühlen" — dann kommt das Wort "leicht" in der Intervention wieder vor. Wenn er von seinem roten Rennvelo gesprochen hat — dann setzt er sich jetzt wieder auf dieses rote Rennvelo. Das Unbewusste erkennt sich selbst. Die eigene Sprache des Klienten landet tiefer als jede Therapeutenformulierung.</p>
+<p>Was tun, wenn die Intervention nicht greift? Flexibel bleiben. Der Klient weiß nicht, wie ein Sixstep Reframe aussehen soll. Er weiß nicht, wie eine Regression aussehen soll. Wenn es nicht funktioniert, biegst du ab: "Dieses Bild verblasst — und jetzt, während dein Unterbewusstsein hundert neue Wege findet, möchte ich, dass du dir vorstellst..."</p>
+<p>Weniger ist mehr. Ihr braucht nicht dreißig verschiedene Interventionen. Lieber eine klare Intervention als fünf halbfertige. Macht ein bis zwei Dinge mit dem Klienten — das, was wirklich zum Thema passt.</p>
+<p>In der Medizin gibt es einen Spruch: "Passe die Schiene an den Patienten an — nicht den Patienten an die Schiene." Das gilt genauso für die Hypnose.</p>
+<p>Take-away: Bleib nah am Ziel des Klienten — nicht an deiner schönsten Metapher.</p>
+
+  </div>
+</section>
+
+<section class="transcript-section" id="section-modul7">
+  <div class="section-header">
+    <div class="section-meta">
+      <span class="section-badge" style="color:#00b4ff; border-color:#00b4ff55; background:#00b4ff11">Rückführung</span>
+    </div>
+    <h2 class="section-title" style="color:#00b4ff">Modul 7</h2>
+    <p class="section-subtitle">Exduktion & Reorientierung</p>
+    <div class="section-divider" style="background:#00b4ff44"></div>
+  </div>
+  <div class="section-body">
+    <p>Herzlich willkommen in Modul 7 — die Exduktion, das Herausführen aus der Trance und die Reorientierung.</p>
+<p>Es gibt viele Techniken: Manche Erickson-Anhänger sagen "und du kannst in deiner eigenen Zeit wieder hier in den Raum zurückkommen." In der Blitzhypnose sieht man "1, 2, 3 — Augen auf." Alles hat seinen Platz.</p>
+<p>Meine Herausführung hängt davon ab, wie lange der Klient in Trance war. Bei kurzer Blitzhypnose: 1, 2, 3, Augen auf. Bei einer langen therapeutischen Sitzung lasse ich ihn manchmal in seiner eigenen Zeit zurückkommen. Am häufigsten zähle ich von 1 bis 5:</p>
+<p>"Eins — du nimmst einen tiefen Atemzug. Zwei — du bewegst Hände und Füße. Drei — dein Kopf fühlt sich an wie von frischem Quellwasser umspült. Vier — noch einmal ein tiefer Atemzug. Fünf — herzlich willkommen zurück. Du fühlst dich großartig."</p>
+<p>Wichtig: Auch deine Stimme und Körperhaltung passen sich an. Während der Trance spreche ich mit hypnotischer Stimme, langsam, vertieft. Beim Rausführen setze ich mich aufrecht hin und spreche wieder normal — damit der Klient eine klare Grenze zwischen Trance und Normalzustand erlebt.</p>
+<p>Die SUDs nach der Exduktion: Direkt nachdem der Klient zurück ist, bitte ich ihn noch einmal, die Augen zu schließen und an das ursprüngliche Problem zu denken. Und dann: "Wie schlimm ist das Gefühl jetzt noch, von 0 bis 10?" Wenn ich das direkt nach der Exduktion frage, antwortet noch das Unterbewusstsein. Der Klient ist noch sehr suggestibel. Genau deswegen ist der Zeitpunkt entscheidend.</p>
+<p>Und dann: Lass diesen Moment stehen. Wenn jemand merkt, dass er mit einer 8 gekommen ist und jetzt eine 1 hat — das ist oft der stärkste Moment der ganzen Sitzung. Nicht kommentieren, nicht erklären. Einfach stehen lassen.</p>
+<p>Wenn der rationale Geist später sagt "Ich weiß gar nicht, ob ich wirklich in Hypnose war" — dann hat der Klient trotzdem diese Zahl. "Du bist mit einer 8 gekommen und gehst mit einer 1 — was sagst du dazu?" Das ist für den rationalen Geist ein absolut handfester Punkt.</p>
+<p>Was tun, wenn ein Klient komisch aus der Hypnose kommt — nuschelt, schielt, sich seltsam verhält? Das nennt man einen hypnotischen Kater. Nicht schlimm, nicht gefährlich — aber den Klienten wollen wir nicht in diesem Zustand gehen lassen. Einfach kurz wieder in Hypnose versenken und dann wirklich ordentlich rausführen, mit einem klaren Cut bei fünf.</p>
+<p>Ich biete meinen Klienten an, nach der Sitzung noch kurz im Wartezimmer zu sitzen, ein Glas Wasser zu trinken — und erst zu gehen, wenn sie sich vollständig gut fühlen.</p>
+<p>Take-away: Die Exduktion ist der letzte Eindruck. Sie entscheidet, ob der Klient wiederkommt.</p>
+
+  </div>
+</section>
+
+<section class="transcript-section" id="section-modul8">
+  <div class="section-header">
+    <div class="section-meta">
+      <span class="section-badge" style="color:#4fc3f7; border-color:#4fc3f755; background:#4fc3f711">Abschluss</span>
+    </div>
+    <h2 class="section-title" style="color:#4fc3f7">Modul 8</h2>
+    <p class="section-subtitle">Nachgespräch & Integration</p>
+    <div class="section-divider" style="background:#4fc3f744"></div>
+  </div>
+  <div class="section-body">
+    <p>Herzlich willkommen im letzten Modul — Nachgespräch und Integration.</p>
+<p>Ich persönlich halte diesen Teil kurz. Ich möchte nicht rational zerreden, was wir gerade im Unbewussten erarbeitet haben. Ich mache relativ wenige Sätze — nur so viel, dass alles ordentlich ist, dass alles stimmt. Verwaltungskram wie Rechnungen habe ich vorher erledigt.</p>
+<p>Wenn du etwas fragen willst, wie es dem Klienten geht: Keine Bewertungsfragen. "Wie war die Sitzung?" ist eine Bewertungsfrage — die bringt uns nicht weiter. Stelle stattdessen Verarbeitungsfragen: "Was nimmst du heute aus dieser Sitzung mit?" Das aktiviert Verarbeitung statt Bewertung.</p>
+<p>Und dann die SUDs: "Du bist mit einer 8 zu mir gekommen. Jetzt sagst du eine 1. Was bemerkst du dabei?" Das verankert die Veränderung auf einer rationalen Ebene — auch für später, wenn der analytische Verstand anfängt zu zweifeln.</p>
+<p>Die wichtigste Suggestion, die ich in jedem Nachgespräch verwende: "Die Veränderung hat in dieser Sitzung begonnen — jetzt, in diesem Moment. Aber sie wird weitergehen. In der nächsten Stunde. In den nächsten Tagen. In den nächsten Wochen. Sei offen für das, was da für dich kommt."</p>
+<p>Das ist eine posthypnotische Suggestion. Sie öffnet den Klienten für weitere Veränderungen und macht deutlich: Die Arbeit ist nicht vorbei, wenn er die Tür schließt.</p>
+<p>"Sei offen für die Möglichkeiten" — das habe ich von einer kanadischen Hypnotiseurin gelernt und es zieht sich durch meine ganze Arbeit. Das einzige, was der Klient mitbringen muss, ist die Offenheit, dass etwas Wunderbares für ihn passieren kann.</p>
+<p>Hausaufgaben: Ich gebe die manchmal — zum Beispiel ein Schmerztagebuch bei Schmerzpatienten, oder die Aufgabe, jeden Abend kurz an ihren sicheren Ort zurückzukehren. Ob das sinnvoll ist, müsst ihr für jeden Klienten einzeln einschätzen. Sehr analytische Menschen können sich wieder in das Problem reinbeißen, wenn sie Hausaufgaben bekommen.</p>
+<p>Take-away: Die Tür schließt sich — aber die Arbeit geht weiter. Und das ist kein Zufall. Das ist Absicht.</p>
+
+  </div>
+</section>
+
+<section class="transcript-section" id="section-ende">
+  <div class="section-header">
+    <div class="section-meta">
+      <span class="section-badge" style="color:#4fc3f7; border-color:#4fc3f755; background:#4fc3f711">Ende</span>
+    </div>
+    <h2 class="section-title" style="color:#4fc3f7">Abschluss</h2>
+    <p class="section-subtitle">Herzlichen Glückwunsch</p>
+    <div class="section-divider" style="background:#4fc3f744"></div>
+  </div>
+  <div class="section-body">
+    <p>Herzlich willkommen und herzlichen Glückwunsch zum Abschluss dieses Kurses — Deine erste Hypnosesitzung.</p>
+<p>Super, dass du bis hierher dabei geblieben bist.</p>
+<p>Du hast jetzt alle acht Schritte — von der Begrüßung des Klienten an der Tür bis zum Nachgespräch. Das ist mehr Struktur, als die meisten Therapeuten in ihrer Ausbildung mitbekommen haben. Du gehst nicht mehr ohne Plan in eine Sitzung. Du weißt, was in jeder Phase passiert — und was du tust, wenn es mal nicht so ganz läuft.</p>
+<p>Jetzt kommt der entscheidende Schritt: Der Unterschied zwischen Wissen und Können entsteht in der Praxis.</p>
+<p>Was ist also der wichtigste nächste Schritt? Nicht noch einen Kurs kaufen. Nicht noch mehr lernen. Sondern: Die nächste erste Sitzung bewusst durchgehen — mit dieser Struktur im Kopf. Vorher vielleicht einmal üben. Danach reflektieren: Was hat funktioniert? Was war holprig?</p>
+<p>Holprig ist normal. Holprig wird besser. Das war bei uns allen so. Und ehrlich gesagt wird manchmal auch bei mir, nach Jahren, eine Sitzung holprig. Das gehört dazu.</p>
+<p>Hypnose ist kein Rezept, das man abarbeitet. Die Struktur ist ein Gerüst — das habe ich dir an die Hand gegeben. Aber deine Persönlichkeit füllt dieses Gerüst aus. Der Klient braucht keinen perfekten Therapeuten. Er braucht einen präsenten, zugewandten Menschen, der wirklich mit ihm arbeiten will.</p>
+<p>Nichts muss perfekt sein. Es wird immer etwas geben, was nicht ganz so läuft wie gedacht. Seid flexibel. Seid offen für die Möglichkeiten.</p>
+<p>Du findest diesen Kurs in der Community — den Hypnose Enthusiasten. Stell dort Fragen, tausch dich aus, komm in die Live Calls. Wir haben Supervisionscalls für Fallbesprechungen, Übungsabende und vieles mehr. Wenn du Fragen zu deiner ersten Sitzung hast — stell sie einfach in der Community.</p>
+<p>Ich hoffe, dieser Kurs gibt dir genau das, was ich mir damals gewünscht hätte, als ich angefangen habe: eine Struktur, der du folgen kannst, und den Mut, mit diesem wunderbaren Werkzeug Gutes zu tun.</p>
+<p>Ich bin absolut davon überzeugt, dass Hypnose etwas unglaublich Wichtiges und Gutes ist. Jetzt geh raus und tu was Gutes.</p>
+<p>Alles Gute — und viel Spaß mit der Hypnose.</p>
+
+  </div>
+</section>
+
+  </main>
+
+  <div class="nav-buttons">
+    <button class="nav-btn" id="btn-prev" onclick="navigate(-1)">← Zurück</button>
+    <button class="nav-btn" id="btn-next" onclick="navigate(1)">Weiter →</button>
+  </div>
+
+  <div class="download-block">
+    <p class="download-label">Bonus-Downloads</p>
+    <h2 class="download-title">Zum Mitnehmen in die Sitzung</h2>
+    <p class="download-desc">Zwei PDFs zum Ausdrucken — ein kompaktes Cheat Sheet für die Sitzung und eine vollständige Zusammenfassung aller 8 Module zum Vertiefen.</p>
+    <div class="download-buttons">
+      <a class="dl-btn dl-btn-primary" href="cheatsheet.pdf" download>
+        &#8595; Cheat Sheet — Kompakt
+      </a>
+      <a class="dl-btn dl-btn-secondary" href="zusammenfassung.pdf" download>
+        &#8595; Vollständige Zusammenfassung
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© Ilja Osthoff · <a href="https://www.skool.com/die-hypnose-enthusiasten" target="_blank" rel="noopener">Die Hypnose Enthusiasten</a></p>
+  </footer>
+
+</div>
+
+<script>
+  const order = ['willkommen', 'modul1', 'modul2', 'modul3', 'modul4', 'modul5', 'modul6', 'modul7', 'modul8', 'ende'];
+  let current = 0;
+
+  function showSection(key) {
+    document.querySelectorAll('.transcript-section').forEach(s => s.classList.remove('visible'));
+    document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+    document.getElementById('section-' + key).classList.add('visible');
+    document.querySelector('[data-target="' + key + '"]').classList.add('active');
+    current = order.indexOf(key);
+    updateNav();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function navigate(dir) {
+    const next = current + dir;
+    if (next >= 0 && next < order.length) showSection(order[next]);
+  }
+
+  function updateNav() {
+    document.getElementById('btn-prev').disabled = current === 0;
+    document.getElementById('btn-next').disabled = current === order.length - 1;
+  }
+
+  showSection(order[0]);
+</script>
+
+</body>
+</html>
