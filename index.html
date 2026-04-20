@@ -13,23 +13,20 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg-deep:     #0d0d1a;
-      --bg-main:     #1a1a2e;
-      --bg-card:     #16213e;
-      --pink:        #e040fb;
-      --hot-pink:    #ff4da6;
-      --cyan:        #00b4ff;
-      --light-blue:  #4fc3f7;
-      --purple:      #7c3aed;
-      --white:       #ffffff;
-      --text:        #f0f0ff;
-      --muted:       #a0a0cc;
-      --dim:         #606080;
+      --bg-deep:    #0d0d1a;
+      --bg-main:    #1a1a2e;
+      --bg-card:    #16213e;
+      --pink:       #e040fb;
+      --cyan:       #00b4ff;
+      --light-blue: #4fc3f7;
+      --purple:     #7c3aed;
+      --white:      #ffffff;
+      --text:       #f0f0ff;
+      --muted:      #a0a0cc;
+      --dim:        #606080;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg-deep);
@@ -39,7 +36,6 @@
       overflow-x: hidden;
     }
 
-    /* ── Animated background ── */
     body::before {
       content: '';
       position: fixed;
@@ -52,19 +48,15 @@
       z-index: 0;
     }
 
-    /* ── Skyline SVG background ── */
     .skyline-bg {
       position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: 0; left: 0; right: 0;
       height: 220px;
       opacity: 0.07;
       pointer-events: none;
       z-index: 0;
     }
 
-    /* ── Layout ── */
     .page {
       position: relative;
       z-index: 1;
@@ -73,7 +65,6 @@
       padding: 48px 24px 80px;
     }
 
-    /* ── Header ── */
     .header {
       text-align: center;
       margin-bottom: 16px;
@@ -119,22 +110,14 @@
       margin-bottom: 32px;
     }
 
-    .author-line strong {
-      color: var(--text);
-      font-weight: 600;
-    }
+    .author-line strong { color: var(--text); font-weight: 600; }
 
-    /* ── Steps ── */
-    .steps {
-      position: relative;
-    }
+    .steps { position: relative; }
 
     .steps::before {
       content: '';
       position: absolute;
-      left: 21px;
-      top: 32px;
-      bottom: 32px;
+      left: 21px; top: 32px; bottom: 32px;
       width: 2px;
       background: linear-gradient(180deg, #e040fb55 0%, #7c3aed44 50%, #00b4ff55 100%);
     }
@@ -157,16 +140,8 @@
     .step:nth-child(7) { animation-delay: 0.57s; }
     .step:nth-child(8) { animation-delay: 0.64s; }
 
-    .step-num-wrap {
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
     .step-num {
-      width: 44px;
-      height: 44px;
+      width: 44px; height: 44px;
       border-radius: 50%;
       background: var(--bg-main);
       display: flex;
@@ -184,7 +159,6 @@
     .step-card {
       flex: 1;
       background: var(--bg-card);
-      border: 1px solid #e040fb22;
       border-radius: 12px;
       padding: 16px 20px 14px;
       cursor: pointer;
@@ -197,15 +171,10 @@
       transform: translateX(3px);
     }
 
-    .step-card:hover + .step-num-wrap .step-num,
-    .step:hover .step-num {
-      box-shadow: 0 0 14px currentColor;
-    }
-
     .step-head {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       margin-bottom: 7px;
       flex-wrap: wrap;
     }
@@ -227,6 +196,28 @@
       border: 1px solid currentColor;
       opacity: 0.65;
       flex-shrink: 0;
+    }
+
+    .suds-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 9px;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+
+    .suds-before {
+      background: #6a60ff22;
+      color: #9090ff;
+      border: 1px solid #6a60ff55;
+    }
+
+    .suds-after {
+      background: #00b4ff22;
+      color: #4fc3f7;
+      border: 1px solid #00b4ff55;
     }
 
     .step-desc {
@@ -258,8 +249,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 18px;
-      height: 18px;
+      width: 18px; height: 18px;
       border-radius: 50%;
       border: 1.5px solid currentColor;
       font-size: 14px;
@@ -283,26 +273,51 @@
 
     .tip-box.open { display: block; }
 
-    /* Per-step accent colors */
-    .s1 .step-num, .s1 .step-title, .s1 .tip-btn, .s1 .step-badge, .s1 .tip-box { color: #e040fb; }
-    .s2 .step-num, .s2 .step-title, .s2 .tip-btn, .s2 .step-badge, .s2 .tip-box { color: #cc40fb; }
-    .s3 .step-num, .s3 .step-title, .s3 .tip-btn, .s3 .step-badge, .s3 .tip-box { color: #9950ff; }
-    .s4 .step-num, .s4 .step-title, .s4 .tip-btn, .s4 .step-badge, .s4 .tip-box { color: #6a60ff; }
-    .s5 .step-num, .s5 .step-title, .s5 .tip-btn, .s5 .step-badge, .s5 .tip-box { color: #3a80ff; }
-    .s6 .step-num, .s6 .step-title, .s6 .tip-btn, .s6 .step-badge, .s6 .tip-box { color: #00a4ff; }
-    .s7 .step-num, .s7 .step-title, .s7 .tip-btn, .s7 .step-badge, .s7 .tip-box { color: #00b4ff; }
-    .s8 .step-num, .s8 .step-title, .s8 .tip-btn, .s8 .step-badge, .s8 .tip-box { color: #4fc3f7; }
+    .s1 .step-num { color: #e040fb; border: 1.5px solid #e040fb44; }
+    .s2 .step-num { color: #cc40fb; border: 1.5px solid #cc40fb44; }
+    .s3 .step-num { color: #9950ff; border: 1.5px solid #9950ff44; }
+    .s4 .step-num { color: #6a60ff; border: 1.5px solid #6a60ff44; }
+    .s5 .step-num { color: #3a80ff; border: 1.5px solid #3a80ff44; }
+    .s6 .step-num { color: #00a4ff; border: 1.5px solid #00a4ff44; }
+    .s7 .step-num { color: #00b4ff; border: 1.5px solid #00b4ff44; }
+    .s8 .step-num { color: #4fc3f7; border: 1.5px solid #4fc3f744; }
 
-    .s1 .step-num { border: 1.5px solid #e040fb44; }
-    .s2 .step-num { border: 1.5px solid #cc40fb44; }
-    .s3 .step-num { border: 1.5px solid #9950ff44; }
-    .s4 .step-num { border: 1.5px solid #6a60ff44; }
-    .s5 .step-num { border: 1.5px solid #3a80ff44; }
-    .s6 .step-num { border: 1.5px solid #00a4ff44; }
-    .s7 .step-num { border: 1.5px solid #00b4ff44; }
-    .s8 .step-num { border: 1.5px solid #4fc3f744; }
+    .s1 .step-title, .s1 .tip-btn { color: #e040fb; }
+    .s2 .step-title, .s2 .tip-btn { color: #cc40fb; }
+    .s3 .step-title, .s3 .tip-btn { color: #9950ff; }
+    .s4 .step-title, .s4 .tip-btn { color: #6a60ff; }
+    .s5 .step-title, .s5 .tip-btn { color: #3a80ff; }
+    .s6 .step-title, .s6 .tip-btn { color: #00a4ff; }
+    .s7 .step-title, .s7 .tip-btn { color: #00b4ff; }
+    .s8 .step-title, .s8 .tip-btn { color: #4fc3f7; }
 
-    /* ── CTA footer ── */
+    .s1 .step-badge { color: #e040fb; }
+    .s2 .step-badge { color: #cc40fb; }
+    .s3 .step-badge { color: #9950ff; }
+    .s4 .step-badge { color: #6a60ff; }
+    .s5 .step-badge { color: #3a80ff; }
+    .s6 .step-badge { color: #00a4ff; }
+    .s7 .step-badge { color: #00b4ff; }
+    .s8 .step-badge { color: #4fc3f7; }
+
+    .s1 .step-card { border: 1px solid #e040fb33; }
+    .s2 .step-card { border: 1px solid #cc40fb33; }
+    .s3 .step-card { border: 1px solid #9950ff33; }
+    .s4 .step-card { border: 1px solid #6a60ff33; }
+    .s5 .step-card { border: 1px solid #3a80ff33; }
+    .s6 .step-card { border: 1px solid #00a4ff33; }
+    .s7 .step-card { border: 1px solid #00b4ff33; }
+    .s8 .step-card { border: 1px solid #4fc3f733; }
+
+    .s1 .tip-box { border-color: #e040fb; }
+    .s2 .tip-box { border-color: #cc40fb; }
+    .s3 .tip-box { border-color: #9950ff; }
+    .s4 .tip-box { border-color: #6a60ff; }
+    .s5 .tip-box { border-color: #3a80ff; }
+    .s6 .tip-box { border-color: #00a4ff; }
+    .s7 .tip-box { border-color: #00b4ff; }
+    .s8 .tip-box { border-color: #4fc3f7; }
+
     .cta-block {
       margin-top: 52px;
       text-align: center;
@@ -362,18 +377,13 @@
       text-decoration: none;
       padding: 14px 32px;
       border-radius: 8px;
-      border: none;
       cursor: pointer;
       transition: opacity 0.2s, transform 0.15s;
       box-shadow: 0 0 24px #e040fb44;
     }
 
-    .cta-btn:hover {
-      opacity: 0.88;
-      transform: translateY(-1px);
-    }
+    .cta-btn:hover { opacity: 0.88; transform: translateY(-1px); }
 
-    /* ── Footer ── */
     .footer {
       margin-top: 40px;
       text-align: center;
@@ -382,13 +392,9 @@
       letter-spacing: 0.04em;
     }
 
-    .footer a {
-      color: var(--muted);
-      text-decoration: none;
-    }
+    .footer a { color: var(--muted); text-decoration: none; }
     .footer a:hover { color: var(--cyan); }
 
-    /* ── Animations ── */
     @keyframes fadeDown {
       from { opacity: 0; transform: translateY(-12px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -398,7 +404,6 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── Mobile ── */
     @media (max-width: 480px) {
       .page { padding: 32px 16px 60px; }
       .step-card { padding: 14px 16px 12px; }
@@ -409,64 +414,37 @@
 </head>
 <body>
 
-<!-- Decorative skyline -->
 <svg class="skyline-bg" viewBox="0 0 1440 220" preserveAspectRatio="xMidYMax meet" fill="#4fc3f7" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0"   y="120" width="30"  height="100"/>
-  <rect x="20"  y="90"  width="20"  height="130"/>
-  <rect x="50"  y="100" width="40"  height="120"/>
-  <rect x="60"  y="70"  width="12"  height="150"/>
-  <rect x="100" y="110" width="35"  height="110"/>
-  <rect x="110" y="80"  width="10"  height="140"/>
-  <rect x="145" y="95"  width="45"  height="125"/>
-  <rect x="160" y="60"  width="14"  height="160"/>
-  <rect x="200" y="105" width="30"  height="115"/>
-  <rect x="240" y="85"  width="50"  height="135"/>
-  <rect x="255" y="50"  width="10"  height="170"/>
-  <rect x="300" y="115" width="35"  height="105"/>
-  <rect x="310" y="75"  width="12"  height="145"/>
-  <rect x="345" y="90"  width="45"  height="130"/>
-  <rect x="360" y="55"  width="14"  height="165"/>
-  <rect x="400" y="100" width="40"  height="120"/>
-  <rect x="415" y="65"  width="10"  height="155"/>
-  <rect x="450" y="110" width="30"  height="110"/>
-  <rect x="490" y="80"  width="55"  height="140"/>
-  <rect x="505" y="45"  width="12"  height="175"/>
-  <rect x="555" y="100" width="35"  height="120"/>
-  <rect x="570" y="70"  width="10"  height="150"/>
-  <rect x="600" y="90"  width="50"  height="130"/>
-  <rect x="615" y="55"  width="16"  height="165"/>
-  <rect x="660" y="105" width="40"  height="115"/>
-  <rect x="675" y="75"  width="12"  height="145"/>
-  <rect x="710" y="95"  width="45"  height="125"/>
-  <rect x="725" y="60"  width="10"  height="160"/>
-  <rect x="765" y="110" width="30"  height="110"/>
-  <rect x="800" y="85"  width="55"  height="135"/>
-  <rect x="815" y="50"  width="14"  height="170"/>
-  <rect x="865" y="100" width="40"  height="120"/>
-  <rect x="880" y="65"  width="10"  height="155"/>
-  <rect x="910" y="90"  width="45"  height="130"/>
-  <rect x="925" y="55"  width="12"  height="165"/>
-  <rect x="965" y="105" width="35"  height="115"/>
-  <rect x="1010" y="80" width="50"  height="140"/>
-  <rect x="1025" y="45" width="14"  height="175"/>
-  <rect x="1075" y="95" width="40"  height="125"/>
-  <rect x="1090" y="60" width="10"  height="160"/>
-  <rect x="1120" y="100" width="35" height="120"/>
-  <rect x="1135" y="70"  width="12" height="150"/>
-  <rect x="1165" y="85"  width="50" height="135"/>
-  <rect x="1180" y="50"  width="16" height="170"/>
-  <rect x="1230" y="105" width="40" height="115"/>
-  <rect x="1245" y="75"  width="12" height="145"/>
-  <rect x="1280" y="90"  width="45" height="130"/>
-  <rect x="1295" y="55"  width="10" height="165"/>
-  <rect x="1340" y="100" width="30" height="120"/>
-  <rect x="1380" y="80"  width="60" height="140"/>
-  <rect x="1395" y="45"  width="14" height="175"/>
+  <rect x="0" y="120" width="30" height="100"/><rect x="20" y="90" width="20" height="130"/>
+  <rect x="50" y="100" width="40" height="120"/><rect x="60" y="70" width="12" height="150"/>
+  <rect x="100" y="110" width="35" height="110"/><rect x="110" y="80" width="10" height="140"/>
+  <rect x="145" y="95" width="45" height="125"/><rect x="160" y="60" width="14" height="160"/>
+  <rect x="200" y="105" width="30" height="115"/><rect x="240" y="85" width="50" height="135"/>
+  <rect x="255" y="50" width="10" height="170"/><rect x="300" y="115" width="35" height="105"/>
+  <rect x="310" y="75" width="12" height="145"/><rect x="345" y="90" width="45" height="130"/>
+  <rect x="360" y="55" width="14" height="165"/><rect x="400" y="100" width="40" height="120"/>
+  <rect x="415" y="65" width="10" height="155"/><rect x="450" y="110" width="30" height="110"/>
+  <rect x="490" y="80" width="55" height="140"/><rect x="505" y="45" width="12" height="175"/>
+  <rect x="555" y="100" width="35" height="120"/><rect x="570" y="70" width="10" height="150"/>
+  <rect x="600" y="90" width="50" height="130"/><rect x="615" y="55" width="16" height="165"/>
+  <rect x="660" y="105" width="40" height="115"/><rect x="675" y="75" width="12" height="145"/>
+  <rect x="710" y="95" width="45" height="125"/><rect x="725" y="60" width="10" height="160"/>
+  <rect x="765" y="110" width="30" height="110"/><rect x="800" y="85" width="55" height="135"/>
+  <rect x="815" y="50" width="14" height="170"/><rect x="865" y="100" width="40" height="120"/>
+  <rect x="880" y="65" width="10" height="155"/><rect x="910" y="90" width="45" height="130"/>
+  <rect x="925" y="55" width="12" height="165"/><rect x="965" y="105" width="35" height="115"/>
+  <rect x="1010" y="80" width="50" height="140"/><rect x="1025" y="45" width="14" height="175"/>
+  <rect x="1075" y="95" width="40" height="125"/><rect x="1090" y="60" width="10" height="160"/>
+  <rect x="1120" y="100" width="35" height="120"/><rect x="1135" y="70" width="12" height="150"/>
+  <rect x="1165" y="85" width="50" height="135"/><rect x="1180" y="50" width="16" height="170"/>
+  <rect x="1230" y="105" width="40" height="115"/><rect x="1245" y="75" width="12" height="145"/>
+  <rect x="1280" y="90" width="45" height="130"/><rect x="1295" y="55" width="10" height="165"/>
+  <rect x="1340" y="100" width="30" height="120"/><rect x="1380" y="80" width="60" height="140"/>
+  <rect x="1395" y="45" width="14" height="175"/>
 </svg>
 
 <div class="page">
 
-  <!-- Header -->
   <header class="header">
     <div class="brand-tag">Die Hypnose Enthusiasten · Ilja Osthoff</div>
     <h1 class="main-title">Die erste Hypnosesitzung</h1>
@@ -474,155 +452,121 @@
     <p class="author-line">Praxis-Tipps von <strong>Ilja Osthoff</strong> — Anästhesist &amp; Hypnosetherapeut</p>
   </header>
 
-  <!-- Steps -->
   <div class="steps" role="list">
 
     <article class="step s1" role="listitem">
-      <div class="step-num-wrap">
-        <div class="step-num">1</div>
-      </div>
+      <div class="step-num">1</div>
       <div class="step-card" onclick="toggleTip(this)">
         <div class="step-head">
           <span class="step-title">Begrüßung &amp; Beziehungsaufbau</span>
           <span class="step-badge">Rapport</span>
         </div>
         <p class="step-desc">Die erste Minute entscheidet über alles. Hier entsteht Vertrauen — oder eben nicht. Kein formelles Interview, sondern echter menschlicher Kontakt.</p>
-        <button class="tip-btn" tabindex="-1">
-          <span class="tip-icon">+</span> Praxis-Tipp
-        </button>
+        <button class="tip-btn" tabindex="-1"><span class="tip-icon">+</span> Praxis-Tipp</button>
         <div class="tip-box">Ruhige Stimme, offene Körperhaltung, keine Schreibtischschranke zwischen dir und dem Klienten. Hypnose beginnt nicht bei der Induktion — sie beginnt bei der Begrüßung. Pacing ist hier schon aktiv.</div>
       </div>
     </article>
 
     <article class="step s2" role="listitem">
-      <div class="step-num-wrap">
-        <div class="step-num">2</div>
-      </div>
+      <div class="step-num">2</div>
       <div class="step-card" onclick="toggleTip(this)">
         <div class="step-head">
           <span class="step-title">Anamnese &amp; Zielformulierung</span>
           <span class="step-badge">Kontrakt</span>
+          <span class="suds-badge suds-before">SUDs Baseline</span>
         </div>
-        <p class="step-desc">Was will der Klient wirklich? Das erste formulierte Ziel ist selten das eigentliche. Gute Fragen führen zu einem konkreten, erreichbaren Veränderungsziel.</p>
-        <button class="tip-btn" tabindex="-1">
-          <span class="tip-icon">+</span> Praxis-Tipp
-        </button>
-        <div class="tip-box">Frage: "Woran würdest du merken, dass diese Sitzung erfolgreich war?" — Das erzwingt eine konkrete Antwort statt vager Wünsche. Ziele müssen positiv formuliert sein (hin zu etwas, nicht weg von etwas).</div>
+        <p class="step-desc">Was will der Klient wirklich? Das erste formulierte Ziel ist selten das eigentliche. Gute Fragen führen zu einem konkreten Veränderungsziel — und du misst den Ausgangswert.</p>
+        <button class="tip-btn" tabindex="-1"><span class="tip-icon">+</span> Praxis-Tipp</button>
+        <div class="tip-box">Frage: "Woran würdest du merken, dass diese Sitzung erfolgreich war?" — Das erzwingt eine konkrete Antwort. Dann die SUDs-Baseline erheben: "Wenn du jetzt an dieses Thema denkst — wie stark ist das Gefühl auf einer Skala von 0 bis 10?" Notiere den Wert. Er ist dein Ausgangspunkt und dein Messinstrument. Ziele müssen positiv formuliert sein — hin zu etwas, nicht weg von etwas.</div>
       </div>
     </article>
 
     <article class="step s3" role="listitem">
-      <div class="step-num-wrap">
-        <div class="step-num">3</div>
-      </div>
+      <div class="step-num">3</div>
       <div class="step-card" onclick="toggleTip(this)">
         <div class="step-head">
           <span class="step-title">Arbeitsauftrag &amp; Erwartungsklärung</span>
           <span class="step-badge">Vorbereitung</span>
         </div>
         <p class="step-desc">Was passiert heute in dieser Sitzung? Was ist deine Rolle als Therapeut, was ist die Rolle des Klienten? Unklare Erwartungen sabotieren die Trance noch bevor sie beginnt.</p>
-        <button class="tip-btn" tabindex="-1">
-          <span class="tip-icon">+</span> Praxis-Tipp
-        </button>
+        <button class="tip-btn" tabindex="-1"><span class="tip-icon">+</span> Praxis-Tipp</button>
         <div class="tip-box">Erkläre kurz, was du vorhast — ohne es komplett aufzudecken. "Wir werden heute eine Technik nutzen, die deinem Geist erlaubt, tief zu entspannen und neue Perspektiven zu finden." Das reduziert Widerstand und erhöht die Kooperation.</div>
       </div>
     </article>
 
     <article class="step s4" role="listitem">
-      <div class="step-num-wrap">
-        <div class="step-num">4</div>
-      </div>
+      <div class="step-num">4</div>
       <div class="step-card" onclick="toggleTip(this)">
         <div class="step-head">
           <span class="step-title">Hypnoseerklärung</span>
           <span class="step-badge">Psychoedukation</span>
         </div>
         <p class="step-desc">Mythen zerstören, bevor sie die Trance blockieren. Kontrollverlust, "nicht hypnotisierbar sein", Schlafzustand — das sind die drei großen Barrieren. Hier räumst du sie weg.</p>
-        <button class="tip-btn" tabindex="-1">
-          <span class="tip-icon">+</span> Praxis-Tipp
-        </button>
+        <button class="tip-btn" tabindex="-1"><span class="tip-icon">+</span> Praxis-Tipp</button>
         <div class="tip-box">Nutze Alltagsbeispiele: "Hast du schon mal einen Film so intensiv geschaut, dass du vergessen hast, dass du auf dem Sofa sitzt?" Noch besser: das Autofahren. Du fährst eine vertraute Strecke, grübelst über irgendetwas nach — und plötzlich bist du da, ohne die letzten Kilometer bewusst erlebt zu haben. Dein Körper hat alles richtig gemacht, dein Geist war woanders. Genau das ist Trance.</div>
       </div>
     </article>
 
     <article class="step s5" role="listitem">
-      <div class="step-num-wrap">
-        <div class="step-num">5</div>
-      </div>
+      <div class="step-num">5</div>
       <div class="step-card" onclick="toggleTip(this)">
         <div class="step-head">
           <span class="step-title">Induktion</span>
           <span class="step-badge">Tranceinduktion</span>
         </div>
         <p class="step-desc">Nicht jede Induktion passt zu jedem Klienten. Hier wählst du bewusst: progressive Relaxation, Eye-Fixation, Dave-Elman, oder etwas ganz anderes. Flexibilität schlägt Dogma.</p>
-        <button class="tip-btn" tabindex="-1">
-          <span class="tip-icon">+</span> Praxis-Tipp
-        </button>
+        <button class="tip-btn" tabindex="-1"><span class="tip-icon">+</span> Praxis-Tipp</button>
         <div class="tip-box">Beobachte: Augenlidflattern, verlangsamte Atmung, Tonusverlust in Gesicht und Händen. Das sind deine Signale für Trancetiefe. Wenn wenig passiert — Induktion verlangsamen, Stimme absenken, mehr Raum lassen. Trance braucht manchmal etwas Zeit.</div>
       </div>
     </article>
 
     <article class="step s6" role="listitem">
-      <div class="step-num-wrap">
-        <div class="step-num">6</div>
-      </div>
+      <div class="step-num">6</div>
       <div class="step-card" onclick="toggleTip(this)">
         <div class="step-head">
           <span class="step-title">Intervention</span>
           <span class="step-badge">Kernarbeit</span>
         </div>
         <p class="step-desc">Das Herzstück der Sitzung. Ob Imagination, Reframing, Teilearbeit, Regression oder Suggestion — hier passiert die eigentliche Veränderungsarbeit. Alles davor war Vorbereitung.</p>
-        <button class="tip-btn" tabindex="-1">
-          <span class="tip-icon">+</span> Praxis-Tipp
-        </button>
+        <button class="tip-btn" tabindex="-1"><span class="tip-icon">+</span> Praxis-Tipp</button>
         <div class="tip-box">Nutze die Worte des Klienten aus dem Vorgespräch. Wenn er gesagt hat "ich will mich endlich leicht fühlen" — dann taucht "leicht" in deiner Intervention wieder auf. Eigene Sprache landet tiefer als jede perfekte Therapeutenformulierung. Das Unbewusste erkennt sich selbst.</div>
       </div>
     </article>
 
     <article class="step s7" role="listitem">
-      <div class="step-num-wrap">
-        <div class="step-num">7</div>
-      </div>
+      <div class="step-num">7</div>
       <div class="step-card" onclick="toggleTip(this)">
         <div class="step-head">
           <span class="step-title">Exduktion &amp; Reorientierung</span>
           <span class="step-badge">Rückführung</span>
+          <span class="suds-badge suds-after">SUDs Messung</span>
         </div>
-        <p class="step-desc">Trance sauber beenden ist genauso wichtig wie sie einzuleiten. Ein abruptes Ende kostet den Klienten das Erlebnis — und dir das Vertrauen. Langsam, bewusst, vollständig.</p>
-        <button class="tip-btn" tabindex="-1">
-          <span class="tip-icon">+</span> Praxis-Tipp
-        </button>
-        <div class="tip-box">Zählen von 1 bis 5 mit Ankerpunkten: "Bei 3 spürst du deine Füße... bei 5 bist du vollständig zurück, klar und gut." Post-hypnotische Suggestion hier einbauen, wenn passend. Die Sprache bleibt dabei klar — der Klient kommt zurück, wird wacher, findet sich wieder — Begriffe, die den Prozess genau beschreiben.</div>
+        <p class="step-desc">Trance sauber beenden — und direkt danach, noch bevor der Klient ganz im Alltag angekommen ist, die SUDs erneut abfragen. Der Vergleich mit dem Ausgangswert macht die Veränderung sichtbar und spürbar.</p>
+        <button class="tip-btn" tabindex="-1"><span class="tip-icon">+</span> Praxis-Tipp</button>
+        <div class="tip-box">Zählen von 1 bis 5 mit Ankerpunkten: "Bei 3 spürst du deine Füße... bei 5 bist du vollständig zurück, klar und gut." Dann sofort die SUDs: "Wenn du jetzt nochmal an dieses Thema denkst — wie stark ist das Gefühl noch, von 0 bis 10?" Dieser Moment — wenn jemand merkt dass aus einer 8 eine 2 geworden ist — ist oft der stärkste Moment der ganzen Sitzung. Lass ihn stehen.</div>
       </div>
     </article>
 
     <article class="step s8" role="listitem">
-      <div class="step-num-wrap">
-        <div class="step-num">8</div>
-      </div>
+      <div class="step-num">8</div>
       <div class="step-card" onclick="toggleTip(this)">
         <div class="step-head">
           <span class="step-title">Nachgespräch &amp; Integration</span>
           <span class="step-badge">Abschluss</span>
         </div>
-        <p class="step-desc">Was hat der Klient erlebt? Was nimmt er mit? Reflexion vertieft die Wirkung und gibt dir als Therapeut wertvolles Feedback für die nächste Sitzung.</p>
-        <button class="tip-btn" tabindex="-1">
-          <span class="tip-icon">+</span> Praxis-Tipp
-        </button>
-        <div class="tip-box">Frage nicht: "War die Hypnose gut?" Frage: "Was nimmst du heute mit?" — Das aktiviert Verarbeitung statt Bewertung. Und dann das Wichtigste: Gib dem Klienten mit, dass die Veränderung bereits begonnen hat. Nicht erst wenn er das nächste Mal kommt — jetzt, in diesem Moment. Und dass sie in den nächsten Stunden, Tagen und Wochen weitergehen wird. Er soll offen sein für das, was kommt — Träume, Gedanken, kleine Verschiebungen. Die Arbeit ist nicht vorbei, wenn er die Tür schließt.</div>
+        <p class="step-desc">Was hat der Klient erlebt? Was nimmt er mit? Der SUDs-Vergleich ist jetzt dein stärkstes Werkzeug — nicht als Beweis, sondern als Spiegel für den Klienten.</p>
+        <button class="tip-btn" tabindex="-1"><span class="tip-icon">+</span> Praxis-Tipp</button>
+        <div class="tip-box">Frage nicht: "War die Hypnose gut?" Frage: "Was nimmst du heute mit?" — Das aktiviert Verarbeitung statt Bewertung. Wenn die SUDs deutlich gesunken sind, benenne es kurz: "Du bist von einer 8 auf eine 2 gegangen — was bemerkst du dabei?" Das verankert die Veränderung. Und dann das Wichtigste: Gib dem Klienten mit, dass die Veränderung bereits begonnen hat — jetzt, in diesem Moment. Und dass sie in den nächsten Stunden, Tagen und Wochen weitergehen wird. Er soll offen sein für das, was kommt — Träume, Gedanken, kleine Verschiebungen. Die Arbeit ist nicht vorbei, wenn er die Tür schließt.</div>
       </div>
     </article>
 
   </div>
 
-  <!-- CTA -->
   <div class="cta-block">
     <p class="cta-label">Nächster Schritt</p>
     <h2 class="cta-title">Tiefer gehen — in der Community</h2>
     <p class="cta-text">Protokolle, Videos und echte Fallbeispiele aus dem klinischen Alltag. Gemeinsam mit Therapeuten und Coaches, die Hypnose wirklich verstehen wollen.</p>
-    <a class="cta-btn" href="https://www.skool.com/die-hypnose-enthusiasten" target="_blank" rel="noopener">
-      Zur Community →
-    </a>
+    <a class="cta-btn" href="https://www.skool.com/die-hypnose-enthusiasten" target="_blank" rel="noopener">Zur Community →</a>
   </div>
 
   <footer class="footer">
